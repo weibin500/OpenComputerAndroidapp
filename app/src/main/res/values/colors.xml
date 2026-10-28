@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#1e1e2e</color>
+    <color name="card_bg">#313244</color>
+    <color name="card_hover">#45475a</color>
+    <color name="btn_on">#a6e3a1</color>
+    <color name="btn_on_text">#40a02b</color>
+    <color name="btn_off">#f38ba8</color>
+    <color name="btn_off_text">#11111b</color>
+    <color name="btn_reset">#f9e2af</color>
+    <color name="btn_reset_text">#df8e1d</color>
+    <color name="btn_disabled">#585b70</color>
+    <color name="btn_disabled_text">#303045</color>
+    <color name="text_primary">#cdd6f4</color>
+    <color name="text_secondary">#a6adc8</color>
+    <color name="text_blue">#89b4fa</color>
+    <color name="text_cyan">#89dce8</color>
+    <color name="log_bg">#000000</color>
+    <color name="log_text">#00ff00</color>
+</resources>

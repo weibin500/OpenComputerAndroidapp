@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="PC Power Card"
+        android:textSize="28sp"
+        android:textColor="@color/btn_on_text"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBoundDevices"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/bound_devices"
+        android:textSize="20sp"
+        android:textColor="@color/text_cyan"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deviceList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvBoundDevices"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnShowBind" />
+
+    <TextView
+        android:id="@+id/tvNetworkLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connection_label"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnShowBind"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/networkStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/network_offline"
+        android:textColor="@color/text_blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tvNetworkLabel"
+        app:layout_constraintTop_toTopOf="@id/btnShowBind" />
+
+    <Button
+        android:id="@+id/btnShowBind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/update"
+        android:backgroundTint="@color/text_blue"
+        android:textColor="@color/bg_dark"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:id="@+id/bindSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/card_bg"
+        android:padding="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnShowBind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvBindHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_hint"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvScanStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scan_starting"
+            android:textColor="@color/text_blue"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/manual_entry_hint"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/etMac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mac_hint"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:inputType="text"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etSn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sn_hint"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnManualBind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/manual_bind"
+            android:backgroundTint="@color/text_blue"
+            android:textColor="@color/bg_dark"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnStopScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stop_camera"
+            android:backgroundTint="@color/text_secondary"
+            android:textColor="@color/bg_dark"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
